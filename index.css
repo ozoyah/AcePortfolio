@@ -89,10 +89,11 @@ nav {
 }
 
 .hero-section {
-  min-height: 100vh;
+  min-height: 80vh;
   position: relative;
   background: black;
-  margin-top: -2rem;
+  margin-top: 1rem;
+  overflow: hidden;
 }
 
 #hero-img-container {
@@ -138,6 +139,9 @@ nav {
   width: 100%;
   height: 100%;
 }
+#hero-section::-webkit-scrollbar {
+  display: none;
+}
 
 #hero-text h1,
 #hero-text p {
@@ -159,8 +163,8 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 6rem;
-  position: absolute;
+  gap: 5rem;
+  position: relative;
   width: 100%;
   height: 100%;
 }
@@ -183,7 +187,7 @@ nav {
   justify-content: center;
   align-items: end;
   position: absolute;
-  top: 0;
+  top: 1;
   left: 0;
   width: 100%;
   height: 100%;
@@ -226,7 +230,7 @@ nav {
   display: flex;
   color: white;
   justify-content: center;
-  margin-bottom: 100px;
+  margin-bottom: 2rem;
 }
 
 .skills a {
@@ -249,7 +253,7 @@ nav {
 .work-section {
   background-color: #000000;
   color: #ffffff;
-  /* /* overflow-x: hidden; */
+  overflow-x: hidden;
 }
 
 .work-section h2 {
@@ -273,13 +277,17 @@ nav {
   justify-content: center;
 }
 
+#showcase::-webkit-scrollbar {
+  display: none;
+}
+
 .work {
   margin-left: 50px;
   position: relative;
   animation: scroll-left 20s linear infinite;
 }
 
-.work::-webkit-scrollbar {
+.work-section::-webkit-scrollbar {
   display: none;
 }
 
@@ -301,7 +309,7 @@ nav {
 }
 
 .project {
-  width: 45rem;
+  width: 35rem;
   height: 30rem;
   margin-top: 16rem;
   transform: rotate(12deg) skew(-10deg) scale(1.09);
@@ -414,7 +422,7 @@ footer {
   background: #000000;
   color: #ffffff;
   border-top: 3px #414040 solid;
-  margin-top: 2rem;
+  margin-top: 1rem;
   padding: 6rem 2rem;
 }
 
@@ -490,22 +498,22 @@ footer {
 
 /* media queries */
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .image {
     width: 25rem;
     height: 25rem;
   }
 
   nav {
-    overflow-x: hidden;
+    overflow: hidden;
   }
 
   .nav-branding {
     font-size: 25px;
   }
 
-  .skills {
-    margin-bottom: 200px;
+  .skill-name {
+    margin-right: 10px;
   }
 
   .hero-section {
@@ -514,17 +522,20 @@ footer {
 
   #hero-text p {
     display: none;
+    position: relative;
+    bottom: 0;
   }
 
   #hero-text2 p {
     display: flex;
-    position: relative;
-    bottom: 1;
-    margin-top: 580px;
   }
 
   #skills-container {
     flex-wrap: wrap;
+  }
+
+  .skills {
+    margin-bottom: 10rem;
   }
 
   #showcase-section {
@@ -535,7 +546,7 @@ footer {
   }
 
   .project {
-    max-width: 20rem;
+    max-width: 90vw;
     height: 20rem;
     margin-top: 1rem;
     transform: rotate(0) skew(0deg) scale(1);
@@ -550,7 +561,7 @@ footer {
   }
 
   .project img {
-    object-fit: cover;
+    object-fit: fill;
   }
 
   #about-section {
@@ -560,10 +571,6 @@ footer {
   #about-section p {
     font-size: 1.3rem;
     opacity: 0.9;
-  }
-  .about-section {
-    justify-content: center;
-    align-items: center;
   }
   .contact-me img {
     width: 90%;
@@ -618,11 +625,5 @@ footer {
 @media (max-width: 464px) {
   .showcase {
     grid-template-columns: 1fr;
-  }
-
-  #hero-text2 p {
-    display: flex;
-    position: relative;
-    bottom: 0;
   }
 }
