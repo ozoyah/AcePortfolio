@@ -261,8 +261,6 @@ nav {
 #showcase-container {
   display: flex;
   align-items: center;
-  overflow-x: auto;
-  white-space: nowrap;
 }
 
 #showcase-container::-webkit-scrollbar {
@@ -273,16 +271,12 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: scroll-left 20s linear infinite;
-}
-
-.showcase::-webkit-scrollbar {
-  display: none;
 }
 
 .work {
   margin-left: 50px;
   position: relative;
+  animation: scroll-left 20s linear infinite;
 }
 
 .work::-webkit-scrollbar {
@@ -307,30 +301,28 @@ nav {
 }
 
 .project {
-  width: 40rem;
+  width: 45rem;
   height: 30rem;
-  border: 4px #2b2a2a solid;
-  border-radius: 20px;
   margin-top: 16rem;
   transform: rotate(12deg) skew(-10deg) scale(1.09);
   cursor: pointer;
   transition: all 0.4s;
+  object-fit: cover;
+  border-radius: 6px;
 }
 
 .project:hover {
   box-shadow: 16px 16px 60px rgba(50, 172, 243, 0.233);
-  transform: rotate(0) skewY(0) scale(1.4);
-  border: 5px #fffcfc solid;
+  transform: rotate(0) skewY(0) scale(1.01);
 }
 
-/* .project::-webkit-scrollbar {
-      display: none;
-    } */
-
+.project::-webkit-scrollbar {
+  display: none;
+}
 .project img {
+  border-radius: 6px;
   width: 100%;
   height: 100%;
-  object-fit: cover;
 }
 
 #about-section {
@@ -498,7 +490,7 @@ footer {
 
 /* media queries */
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .image {
     width: 25rem;
     height: 25rem;
@@ -512,8 +504,8 @@ footer {
     font-size: 25px;
   }
 
-  .skill-name {
-    margin-right: 10px;
+  .skills {
+    margin-bottom: 200px;
   }
 
   .hero-section {
@@ -522,12 +514,13 @@ footer {
 
   #hero-text p {
     display: none;
-    position: relative;
-    bottom: 0;
   }
 
   #hero-text2 p {
     display: flex;
+    position: relative;
+    bottom: 1;
+    margin-top: 580px;
   }
 
   #skills-container {
@@ -542,7 +535,7 @@ footer {
   }
 
   .project {
-    max-width: 90vw;
+    max-width: 20rem;
     height: 20rem;
     margin-top: 1rem;
     transform: rotate(0) skew(0deg) scale(1);
@@ -557,7 +550,7 @@ footer {
   }
 
   .project img {
-    object-fit: fill;
+    object-fit: cover;
   }
 
   #about-section {
@@ -567,6 +560,10 @@ footer {
   #about-section p {
     font-size: 1.3rem;
     opacity: 0.9;
+  }
+  .about-section {
+    justify-content: center;
+    align-items: center;
   }
   .contact-me img {
     width: 90%;
@@ -621,5 +618,11 @@ footer {
 @media (max-width: 464px) {
   .showcase {
     grid-template-columns: 1fr;
+  }
+
+  #hero-text2 p {
+    display: flex;
+    position: relative;
+    bottom: 0;
   }
 }
